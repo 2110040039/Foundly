@@ -79,6 +79,6 @@ com.example.lostandfound
 This project is licensed under the MIT License.
 
 ---
-**Author:**
-**Contact:** 
+**Author:** Team-2
+**Contact:** Null
 
