@@ -44,8 +44,8 @@ com.example.lostandfound
 ### Steps to Run the Application
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/lost-and-found-backend.git
-   cd lost-and-found-back
+   https://github.com/2110040039/Foundly.git
+   cd Foundly
    ```
 2. Update `application.properties` with database details.
 3. Build the project:
