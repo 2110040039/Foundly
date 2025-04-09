@@ -1,0 +1,168 @@
+.App-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    background: linear-gradient(to right, #f8b500, #fceabb);
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .app-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    color: black;
+  }
+  
+  .app-subtitle {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: black;
+  }
+  
+  .app-subtitle .lost {
+    color: #007bff;
+  }
+  
+  .app-subtitle .list {
+    color: #110a01;
+  }
+  
+  .app-subtitle .find {
+    color: #4caf50;
+  }
+  
+  .report-button {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 20px; /* Adjust padding to make it smaller */
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+    width: auto; /* Ensure the button width is based on its content */
+  }
+  
+  .report-button:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: nowrap; /* Prevent wrapping to new lines */
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Add consistent spacing between tabs */
+  }
+  
+  .tab {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 10px 20px; /* Slightly reduced horizontal padding */
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    white-space: nowrap; /* Prevent text wrapping within tabs */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Removed the margin property as we're using gap instead */
+  }
+  
+  /* For mobile responsiveness */
+  @media (max-width: 600px) {
+    .tabs {
+      flex-direction: column; /* Stack tabs vertically on very small screens */
+      width: 100%;
+    }
+    
+    .tab {
+      width: 80%; /* Make tabs wider on mobile */
+    }
+  }
+  
+  /* For medium screens where they should stay in one line but be more compact */
+  @media (min-width: 601px) and (max-width: 768px) {
+    .tab {
+      padding: 8px 15px; /* Make padding smaller on medium screens */
+      font-size: 0.9rem; /* Slightly smaller font size */
+    }
+  }
+  
+  .tab:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: white; /* White text on hover */
+  }
+  
+  .tab.active {
+    background-color: white; /* Default background for active tab */
+    color: black; /* Default text color for active tab */
+  }
+  
+  .tab.active:hover {
+    background-color: #0099ff; /* Blue background on hover for active tab */
+    color: white; /* White text on hover for active tab */
+  }
+  
+  .search-bar-section {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .search-bar {
+    width: 50%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .categories-section {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .categories-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  
+  .category-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #007bff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  .homepage-container {
+    width: 100%;
+  }
+  
+  .testimonials-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #fafafa;
+    margin-top: 20px;
+  }

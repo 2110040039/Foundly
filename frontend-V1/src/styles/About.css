@@ -1,0 +1,363 @@
+/* AboutUs.css */
+.about-us-container {
+    font-family: 'Inter', 'Poppins', sans-serif;
+    color: #333;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Header Section */
+  #header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    text-align: center;
+    min-height: 50vh;
+    position: relative;
+  }
+  
+  .header-content {
+    z-index: 2;
+    max-width: 800px;
+  }
+  
+  .logo-container {
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .checkmark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .tagline {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 10px;
+    color: #555;
+  }
+  
+  .hero-illustration {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .browser-mockup {
+    width: 100%;
+    background: #f1f3f5;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .browser-dots {
+    display: flex;
+    gap: 6px;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .browser-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #dee2e6;
+  }
+  
+  .browser-content {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .alert-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .icon-inner {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .line {
+    height: 6px;
+    width: 60%;
+    background: #dee2e6;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  
+  .line.shorter {
+    width: 40%;
+  }
+  
+  /* Common Section Styles */
+  section {
+    padding: 80px 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .section-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Intro Section */
+  .intro-section {
+    background-color: #fff;
+  }
+  
+  /* Why Foundly Section */
+  .why-section {
+    background-color: #f8f9fa;
+  }
+  
+  .icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+  
+  .value-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .value-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 30px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+  
+  .icon {
+    font-size: 1.8rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .value-card p {
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  /* How it Works Section */
+  .how-section {
+    background-color: #fff;
+  }
+  
+  .workflow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+  }
+  
+  .workflow-step {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .step-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .workflow-step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .workflow-step p {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .workflow-arrow {
+    font-size: 1.5rem;
+    color: #adb5bd;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, #4a6fa5 0%, #1a3c6e 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .cta-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    line-height: 1.4;
+  }
+  
+  .cta-button {
+    background: #fff;
+    color: #1a3c6e;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .header-section {
+      padding: 40px 20px;
+    }
+    
+    .logo {
+      font-size: 2rem;
+    }
+    
+    .tagline {
+      font-size: 1.2rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .value-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .value-card {
+      width: 100%;
+    }
+    
+    .workflow {
+      flex-direction: column;
+    }
+    
+    .workflow-arrow {
+      transform: rotate(90deg);
+      margin: 10px 0;
+    }
+    
+    .cta-content h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.8rem;
+    }
+    
+    .section-description {
+      font-size: 1rem;
+    }
+    
+    .cta-button {
+      padding: 12px 25px;
+      font-size: 1rem;
+    }
+  }

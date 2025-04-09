@@ -1,0 +1,82 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+}
+
+.navbar-logo h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links li {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px; /* Reduced gap between buttons */
+  align-items: center;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.navbar-login-button,
+.navbar-signup-button,
+.navbar-signout-button {  /* Combined all button styles */
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  padding: 6px 15px; /* Consistent padding */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  white-space: nowrap; /* Prevent text wrapping */
+  min-width: auto; /* No minimum width */
+  width: auto; /* Auto width based on content */
+}
+
+.navbar-login-button:hover,
+.navbar-signup-button:hover,
+.navbar-signout-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px;
+  }
+  
+  .navbar-logo h1 {
+    font-size: 1.3rem;
+  }
+  
+  .navbar-links {
+    gap: 10px;
+  }
+  
+  .auth-buttons {
+    gap: 5px;
+  }
+  
+  .navbar-login-button,
+  .navbar-signup-button,
+  .navbar-signout-button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}
