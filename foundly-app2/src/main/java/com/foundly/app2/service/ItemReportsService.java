@@ -1,19 +1,21 @@
 package com.foundly.app2.service;
 
-import com.foundly.app2.entity.ItemReports;
-import com.foundly.app2.entity.Category;
-import com.foundly.app2.entity.User;
-import com.foundly.app2.repository.ItemReportsRepository;
-import com.foundly.app2.repository.UserRepository;
-import com.foundly.app2.repository.CategoryRepository;
-import com.foundly.app2.dto.FoundItemReportRequest;
-import com.foundly.app2.dto.LostItemReportRequest;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
+import com.foundly.app2.dto.FoundItemReportRequest;
+import com.foundly.app2.dto.LostItemReportRequest;
+import com.foundly.app2.entity.Category;
+import com.foundly.app2.entity.ItemReports;
+import com.foundly.app2.entity.User;
+import com.foundly.app2.repository.CategoryRepository;
+import com.foundly.app2.repository.ItemReportsRepository;
+import com.foundly.app2.repository.UserRepository;
 
 @Service
 public class ItemReportsService {
@@ -26,6 +28,7 @@ public class ItemReportsService {
 
     @Autowired
     private CategoryRepository categoryRepository;
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
     // Get all item reports
     public List<ItemReports> getAllItemReports() {
@@ -51,11 +54,12 @@ public class ItemReportsService {
         foundItem.setImageUrl(request.getImageUrl());
         foundItem.setDateReported(LocalDateTime.now());
         foundItem.setType(ItemReports.Type.FOUND);
-        if (request.isHandoverToSecurity()) {
+        if (request.getHandoverToSecurity()) {
             foundItem.setItemStatus(ItemReports.ItemStatus.WITH_SECURITY); // Set status to WITH_SECURITY
         } else {
             foundItem.setItemStatus(ItemReports.ItemStatus.WITH_FINDER); // Set status to WITH_FINDER
         }
+
         foundItem.setIsRequested(false); // Initially not requested
 
         // Set User
@@ -75,10 +79,12 @@ public class ItemReportsService {
         } else {
             throw new RuntimeException("Category ID must be provided.");
         }
+        //private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
         // Set dateLostOrFound if applicable
         if (request.getDateLostOrFound() != null) {
-            foundItem.setDateLostOrFound(LocalDateTime.parse(request.getDateLostOrFound()));
+        	//private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+            foundItem.setDateLostOrFound(LocalDateTime.parse(request.getDateLostOrFound(),formatter));
         }
 
         // Save the found item report
@@ -110,7 +116,7 @@ public class ItemReportsService {
 
         // Set dateLostOrFound from the request
         if (request.getDateLostOrFound() != null) {
-            lostItem.setDateLostOrFound(LocalDateTime.parse(request.getDateLostOrFound()));
+            lostItem.setDateLostOrFound(LocalDateTime.parse(request.getDateLostOrFound(),formatter));
         } else {
             // Handle the case where dateLostOrFound is not provided
             throw new IllegalArgumentException("Date lost or found must be provided.");

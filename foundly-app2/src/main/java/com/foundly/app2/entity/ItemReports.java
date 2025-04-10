@@ -6,7 +6,7 @@ import lombok.Setter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
-import com.foundly.app2.entity.Category;
+
 @Entity
 @Table(name = "item_reports")
 @Getter
@@ -42,8 +42,8 @@ public class ItemReports {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS")
     private LocalDateTime dateLostOrFound; // Date when the item was lost or found
 
-    @Column(name = "image_url")
-    private String imageUrl; // URL of the item's image
+    @Column(name = "image_url", length = 1000000)
+    private String imageUrl;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false)

@@ -12,5 +12,7 @@ public class LostItemReportRequest {
     private String description; // Description of the lost item
     private String location; // Location where the item was lost
     private String dateLostOrFound; // Date when the item was lost (as String)
-    private String imageUrl; // URL of the item's image
+    private String mobileNumber; // Contact number of the reporter
+    private String email; // Email ID of the reporter
+    private String imageUrl; // URL of the item's image (optional)
 }

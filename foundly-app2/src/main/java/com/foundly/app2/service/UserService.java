@@ -1,23 +1,26 @@
 package com.foundly.app2.service;
 
-import com.foundly.app2.entity.User;
-import com.foundly.app2.repository.UserRepository;
-import com.foundly.app2.dto.UserLoginRequest;
-import com.foundly.app2.dto.UserRegistrationRequest;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.foundly.app2.dto.UserLoginRequest;
+import com.foundly.app2.dto.UserRegistrationRequest;
+import com.foundly.app2.entity.User;
+import com.foundly.app2.repository.UserRepository;
+
 @Service
 public class UserService {
+	@Autowired(required=true)
+	private PasswordEncoder passwordEncoder;
 
     @Autowired
     private UserRepository userRepository;
 
-    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    //private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     // Get all users
     public List<User> getAllUsers() {
@@ -44,20 +47,27 @@ public class UserService {
         userRepository.deleteById(userId);
     }
 
-    public User registerUser(UserRegistrationRequest registrationRequest) {
+    public User registerUser(UserRegistrationRequest request) {
         User user = new User();
-        user.setEmployeeId(registrationRequest.getEmployeeId());
-        user.setName(registrationRequest.getName());
-        user.setEmail(registrationRequest.getEmail());
-        user.setPhone(registrationRequest.getPhone());
-        user.setPassword(passwordEncoder.encode(registrationRequest.getPassword()));
-        user.setUsername(registrationRequest.getUsername()); // Set the username
+        user.setEmployeeId(request.getEmployeeId());
+        user.setName(request.getName());
+        user.setEmail(request.getEmail());
+        user.setUsername(request.getUsername());
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
         return userRepository.save(user);
     }
 
-    // Login a user
-    public Optional<User> loginUser (UserLoginRequest loginRequest) {
-        Optional<User> user = userRepository.findByEmail(loginRequest.getEmail());
+
+    public Optional<User> loginUser(UserLoginRequest loginRequest) {
+        String identifier = loginRequest.getUsernameOrEmail();
+        Optional<User> user;
+
+        // Check by email if it looks like an email, else by username
+        if (identifier.contains("@")) {
+            user = userRepository.findByEmail(identifier);
+        } else {
+            user = userRepository.findByUsername(identifier);
+        }
         if (user.isPresent() && passwordEncoder.matches(loginRequest.getPassword(), user.get().getPassword())) {
             return user;
         }

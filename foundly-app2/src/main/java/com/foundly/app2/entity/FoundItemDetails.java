@@ -28,4 +28,7 @@ public class FoundItemDetails {
 
     @Column(name = "pickup_message")
     private String pickupMessage; // Message for User A
+    
+    @Column(name = "handover_to_security")
+    private boolean handoverToSecurity; // true if handed to security, false if kept with finder
 }

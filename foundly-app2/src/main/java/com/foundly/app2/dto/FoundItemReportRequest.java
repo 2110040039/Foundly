@@ -11,10 +11,12 @@ public class FoundItemReportRequest {
     private String itemName; // Name of the found item
     private String description; // Description of the found item
     private String location; // Location where the item was found
-    private String dateLostOrFound; // Date when the item was found
-    private String imageUrl; // URL of the item's image
-    private boolean handoverToSecurity; // true if handed to security, false if kept with finder
-    private String securityId; // Optional, only if handed to security
-    private String securityName; // Optional, only if handed to security
-    private String pickupMessage; // Message for User A, only if not handed to security
+    private String dateLostOrFound; // Date and time the item was found
+    private String mobileNumber; // Contact number of the reporter
+    private String email; // Email ID of the reporter
+    private Boolean handoverToSecurity; // Flag indicating if the item was handed over to security
+    private String securityId; // Security ID for item handover
+    private String securityName; // Name of the security staff handling the item
+    private String pickupMessage; // Pickup message for the item
+    private String imageUrl; // URL of the item's image (optional)
 }
