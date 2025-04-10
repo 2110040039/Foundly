@@ -14,15 +14,39 @@ function LoginForm({ onClose, onLogin }) {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('User logged in:', formData);
-    setShowMessage(true); // Show success message
-    setTimeout(() => {
-      setShowMessage(false); // Hide message after 3 seconds
-      onLogin();
-      onClose();
-    }, 3000);
+
+    const loginPayload = {
+      email: formData.usernameOrEmail, // Backend expects email
+      password: formData.password,
+    };
+
+    try {
+      const response = await fetch('http://localhost:8080/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginPayload),
+      });
+
+      if (response.ok) {
+        const user = await response.json();
+        console.log('User logged in:', user);
+        setShowMessage(true);
+        setTimeout(() => {
+          setShowMessage(false);
+          onLogin(user); // Pass logged-in user back to parent
+          onClose();
+        }, 3000);
+      } else {
+        alert('Invalid credentials. Please try again.');
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
+      alert('An error occurred during login.');
+    }
   };
 
   return (

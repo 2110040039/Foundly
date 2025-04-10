@@ -11,4 +11,5 @@ public class UserRegistrationRequest {
     private String email;
     private String phone;
     private String password;
+    private String username; // New field for username
 }

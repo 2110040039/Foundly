@@ -44,14 +44,14 @@ public class UserService {
         userRepository.deleteById(userId);
     }
 
-    // Register a new user
-    public User registerUser (UserRegistrationRequest registrationRequest) {
+    public User registerUser(UserRegistrationRequest registrationRequest) {
         User user = new User();
         user.setEmployeeId(registrationRequest.getEmployeeId());
         user.setName(registrationRequest.getName());
         user.setEmail(registrationRequest.getEmail());
         user.setPhone(registrationRequest.getPhone());
         user.setPassword(passwordEncoder.encode(registrationRequest.getPassword()));
+        user.setUsername(registrationRequest.getUsername()); // Set the username
         return userRepository.save(user);
     }
 

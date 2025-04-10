@@ -6,7 +6,7 @@ import lombok.Setter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
-
+import com.foundly.app2.entity.Category;
 @Entity
 @Table(name = "item_reports")
 @Getter

@@ -35,6 +35,9 @@ public class User {
 
     @Column(name = "is_security")
     private boolean isSecurity;
+    
+    @Column(name = "username", unique = true, nullable = false) // New field for username
+    private String username;
 
     public enum Role {
         ADMIN, USER
