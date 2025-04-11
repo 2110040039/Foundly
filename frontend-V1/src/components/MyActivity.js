@@ -133,6 +133,7 @@ function MyActivity() {
             <div className="no-activities">
               No activities match your current filters.
             </div>
+            
           )}
         </div>
       </div>
