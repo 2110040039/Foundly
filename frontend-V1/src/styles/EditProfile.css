@@ -1,0 +1,87 @@
+.edit-profile-container {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .edit-profile-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    max-width: 480px;
+    width: 100%;
+  }
+  
+  .profile-icon-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .edit-profile-icon {
+    font-size: 48px;
+    color: #333;
+  }
+  
+  .edit-profile-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .edit-profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 4px;
+  }
+  
+  .form-group input {
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .form-group input:disabled {
+    background-color: #eee;
+    color: #777;
+  }
+  
+  .save-button {
+    background-color: #ff007f;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+  }
+  
+  .save-button:hover {
+    background-color: #e60073;
+  }
+  
+  .message {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: green;
+  }
+  

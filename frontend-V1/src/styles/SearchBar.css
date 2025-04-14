@@ -1,0 +1,53 @@
+.searchbar-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .searchbar-input {
+    width: 100%;
+    padding: 8px 40px 8px 36px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .searchbar-input:focus {
+    border-color: #ec4899; /* Pink border */
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2); /* Pink ring */
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: #999;
+  }
+  
+  .filter-button {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .filter-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .filter-icon {
+    width: 20px;
+    height: 20px;
+    color: #555;
+  }
+  

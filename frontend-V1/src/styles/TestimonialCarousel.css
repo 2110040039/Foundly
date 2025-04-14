@@ -1,0 +1,110 @@
+.testimonial-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    overflow: hidden;
+  }
+  
+  .testimonial-carousel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  
+  .testimonial-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .testimonial-card {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    text-align: center;
+    transition: transform 0.4s ease;
+    margin: 0 10px;
+  }
+  
+  .testimonial-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid #007bff;
+  }
+  
+  .testimonial-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .testimonial-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial-card .author {
+    font-style: italic;
+    color: #007bff;
+    font-weight: 500;
+  }
+  
+  /* Arrows */
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #333;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+  }
+  
+  .carousel-arrow:hover {
+    background: #007bff;
+    color: #fff;
+  }
+  
+  .carousel-arrow.left {
+    left: -20px;
+  }
+  
+  .carousel-arrow.right {
+    right: -20px;
+  }
+  
+  /* Dots */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #007bff;
+  }
+  
