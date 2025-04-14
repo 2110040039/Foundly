@@ -1,0 +1,19 @@
+*.class
+
+foundly-app2/.settings/
+foundly-app2/.project
+foundly-app2\.classpath
+foundly-app2/.classpath
+foundly-app2/target/
+foundly-app2/bin/
+foundly-app2/*.iml
+foundly-app2/.idea/
+foundly-app2/.mvn/
+
+
+# Frontend (React + Vite)
+frontend-V1/node_modules/
+frontend-V1/dist/
+frontend-V1/.env
+frontend-V1/.DS_Store
+.qodo

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -6,14 +5,9 @@ import ReportItem from './components/ReportItem';
 import MyActivity from './components/MyActivity';
 import HomePage from './components/HomePage';
 import AboutUs from './components/About';
-import Dashboard from './components/Dashboard';
 import AuthBox from './components/AuthBox';
 import { useAuth } from './context/AuthContext';
 import LostItems from './pages/LostItems';
-
-//import { LostItems } from './pages/LostItems';        
-//import { FoundItemReports } from './pages/FoundItemReports';
-
 import FoundItems from './pages/FoundItems';
 
 import './styles/HomePage.css';
@@ -39,10 +33,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/report" element={<RequireAuth><ReportItem /></RequireAuth>} />
         <Route path="/my-activity" element={<RequireAuth><MyActivity /></RequireAuth>} />
-        <Route path="/lost-items" element={<RequireAuth><LostItems/></RequireAuth>} />
+        <Route path="/lost-items" element={<RequireAuth><LostItems /></RequireAuth>} />
         <Route path="/found-items" element={<RequireAuth><FoundItems /></RequireAuth>} />
       </Routes>
 
@@ -56,4 +49,3 @@ const App = () => {
 };
 
 export default App;
-
