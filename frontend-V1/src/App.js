@@ -11,7 +11,7 @@ import LostItems from './pages/LostItems';
 import FoundItems from './pages/FoundItems';
 
 import './styles/HomePage.css';
-
+//k
 const RequireAuth = ({ children }) => {
   const { isLoggedIn, setShowAuthBox } = useAuth();
   const location = useLocation();
